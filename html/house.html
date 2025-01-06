@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Estrela | House</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet"> 
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<!-- Top bar with Casa Estrela and navigation links -->
+<header>
+    <div class="top-bar">
+        <a href="../html/index.html" class="casaestrela" id="home-menu">Casa Estrela</a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="https://www.instagram.com/casaestrela__/" target="_blank">Instagram</a> 
+                    </li>
+                    <li><a href="mailto:acasaestrela@gmail.com" target="_blank">Email</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+
+<!-- add <main> here -->
+    <div class="content">
+        <div class="row">
+            <p class="staywithus-text"><strong>House</strong></p>
+            <p class="staywithus-text">Casa Estrela has four bedrooms, and two shared bathrooms for your convenience.  Two of the rooms are occupied by full-time residents of the house; the other two are for guests. Each room of this rooms has a single bed and working table. In addition to these, you'll find multiple workspaces thoughtfully arranged throughout, ensuring a flexible and comfortable environment, a fully equipped post-production room, a room with drawing table and a big dining/working table. Additionally, in the communal living room you'll have access to our little library, where you're welcome to borrow or contribute books.
+            </p>
+            <p class="staywithus-text">Here's a more detailed list of the spaces in the house:</p>
+            <ul>
+                <li class="staywithus-lists">4x Rooms</li>
+                <li class="staywithus-lists">2x Bathrooms</li>
+                <li class="staywithus-lists">Post Production studio</li>
+                <li class="staywithus-lists">Dining room / Working room</li>
+                <li class="staywithus-lists">Living room</li>
+                <li class="staywithus-lists">Kitchen</li>
+                <li class="staywithus-lists">Laundry Room + Pantry</li>
+                <li class="staywithus-lists">Garden</li>
+
+            </ul>
+            <p class="staywithus-text">* <em>We work with different places around the village outside of the house. If you need more space to work, let us know in advance so that we can find a suitable solution.</em></p>
+        </div>
+
+        <div class="row">
+            <p class="staywithus-text"><strong>Accessibility</strong></p>
+            <p class="staywithus-text">The house is not barrier-free and doesn't meet accessibility standards for wheel-chairs. We are actively working on solutions to improve accessibility and make the space more inclusive. If you have any questions, need more information, or have suggestions on how we can enhance accessibility, please don't hesitate to reach out to us.</p>
+        </div>
+
+        <div class="row">
+            <p class="staywithus-text"><strong>Cats and allergies</strong></p>
+            <p class="staywithus-text">There are three cats living in the house, and that's why we are not able to have other animals. Also, take into consideration that if you suffer from allergies to cats, the house is not the ideal place for you. </p>
+        </div>
+
+        <div class="row">
+            <p class="staywithus-text"><strong>Communal Living</strong></p>
+            <p class="staywithus-text">MASSIA is an easily accessible and self-organised space. It has no selection process, it is relatively cheap, its doors are open. Note that the house is not huge, and to be able to function properly, we need to respect all the areas, as well as everyone's schedules. It's also important to note that since we practice community living, everyday tasks like maintaining the house clean and weekly tasks like cleaning will be performed by everyone living in the house at that moment. </p>
+            <p class="staywithus-text">Whatever project you are working on, we can only make it possible for you if you make it possible for everyone too. The things in MASSIA are there for you and you are there for the things as well.</p>
+            <p class="staywithus-text">MASSIA aspires to be a space where intersectional, anti-racist, feminist analysis inform practice. Sexism, racism, classism, LGBTQ+phobia, ableism, ageism and any other form of discrimination or aggression are not tolerated. MASSIA fosters a practice of collective accountability and considers it everybody's responsibility.</p>
+        </div>
+
+        <div class="row">
+            <p class="staywithus-text"><strong>Communal Living</strong></p>
+            <p class="staywithus-text">MASSIA is an easily accessible and self-organised space. It has no selection process, it is relatively cheap, its doors are open. Note that the house is not huge, and to be able to function properly, we need to respect all the areas, as well as everyone's schedules. It's also important to note that since we practice community living, everyday tasks like maintaining the house clean and weekly tasks like cleaning will be performed by everyone living in the house at that moment. </p>
+            <p class="staywithus-text">Whatever project you are working on, we can only make it possible for you if you make it possible for everyone too. The things in MASSIA are there for you and you are there for the things as well.</p>
+            <p class="staywithus-text">MASSIA aspires to be a space where intersectional, anti-racist, feminist analysis inform practice. Sexism, racism, classism, LGBTQ+phobia, ableism, ageism and any other form of discrimination or aggression are not tolerated. MASSIA fosters a practice of collective accountability and considers it everybody's responsibility.</p>
+        </div>
+    </div>
+
+<!-- Placeholder for Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Include the jQuery to load the footer dynamically -->
+    <script>
+        $(document).ready(function() {
+            // Load the footer content dynamically
+            $('#footer-placeholder').load('../html/footer.html', function() {
+                // The footer is loaded, re-initialize the clock
+                updateClock();
+                setInterval(updateClock, 1000);
+            });
+        });
+    </script>
+
+    <!-- Include clock.js -->
+    <script src="../clock.js"></script>
+</body>
+</html>

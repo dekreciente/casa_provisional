@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Estrela | Molelos</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet"> 
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+<!-- Top bar with Casa Estrela and navigation links -->
+<header>
+    <div class="top-bar">
+        <a href="../html/index.html" class="casaestrela" id="home-menu">Casa Estrela</a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="https://www.instagram.com/casaestrela__/" target="_blank">Instagram</a> 
+                    </li>
+                    <li><a href="mailto:acasaestrela@gmail.com" target="_blank">Email</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+
+<!-- add a <main> class here -->
+    <section class="content">
+        <section class="row">
+            <p class="staywithus-text"><strong>Stay with us</strong></p>
+            <p class="staywithus-text">We don't work with open calls or selection processes; you just need to send us an email to present yourself and your plan for the stay, and we'll get back to you as soon as possible.</p>
+            <p class="staywithus-text">Here are some things to have in mind when you contact us:</p>
+            <ul>
+                <li class="staywithus-lists">Who you are as a person and as a practitioner? </li>
+                <li class="staywithus-lists">What would you bring to the residency: questions, ideas… </li>
+                <li class="staywithus-lists">How do you relate to the ethos of Casa Estrela? </li>
+
+            </ul>
+            <p class="staywithus-text">* <em>Note that in Casa Estrela we are not curators of producers, so you will need to be independent and responsible for your own work.</em></p>
+        </section>
+
+
+
+        
+
+        <section class="row">
+            <p class="staywithus-text"><strong>Prices</strong></p>
+            <p class="staywithus-text"><strong>Casa Estrela is a self-organized space sustained by mainly voluntary labor, operating with minimal resources and without subsidies.</strong> The fees were calculated based on the basic needs of the house. Some of these needs take into account common uses such as energy, gas and water expenses, and common consumables such as laundry detergent, toilet paper, trash and coffee, among others. It should be noted that the values contributed by the residents go directly to the project since no one is profiting from the guest's fee. Each resident is responsible for their food. In Casa Estrela we believe that the residency should be as affordable and as accessible as possible; that's why we established three types of rates:</p>
+            <p class="staywithus-text">* <em>Note that we <span class="tooltip">prefer
+                <span class="tooltiptext">But we can talk about it!</span></span> people to stay around one month because we feel it's a reasonable amount of time to make yourself comfortable in the house and the surroundings.</em></p>
+        </section>
+
+        <section class="row">
+            <p class="staywithus-text"><strong>How does the price work?</strong></p>
+            <p class="staywithus-text">Payment is due on the day of arrival. You will be refunded if you leave earlier. If you leave earlier without any proper motive, we won't be able to refund the payment.</p>
+            <p class="staywithus-text"><strong>Residents that come with a grant</strong>:</p>
+                <ul>
+                    <li class="staywithus-lists">Price per person per week: </li>
+                    <li class="staywithus-lists"> Price per person per month: </li>
+                </ul>
+            <p class="staywithus-text"><strong>Residents without a grant</strong>:</p>
+                <ul>
+                    <li class="staywithus-lists">Price per person per week: </li>
+                    <li class="staywithus-lists"> Price per person per month: </li>
+                </ul>
+            <p class="staywithus-text"><strong>Solidarity price:</strong></p>
+                <ul>
+                    <li class="staywithus-lists">Price per person per week: </li>
+                    <li class="staywithus-lists"> Price per person per month: </li>
+                </ul>
+            <p class="staywithus-text"><strong>How does the solidarity price work?</strong></p>
+            <p class="staywithus-text">Let us know why you want the solidarity price, and the whole team will study your reasons. It is important to note that we have a specific amount of solidarity prices during the year. So don't hesitate to contact us and explain why you want the solidarity price. The solidarity price is aligned with the Portuguese minimum wage (estimated at €5.33/hour in 2024). We invite all guests to thoughtfully assess their own income in relation to this standard when applying for a <em>Solidarity price</em>.</p>
+        </section>
+
+        <section class="row">
+            <p class="staywithus-text"><strong>How does payment work?</strong></p>
+            <p class="staywithus-text">Payment is required at the beginning of your stay via bank transfer to the account details we will provide.</p>
+        </section>
+
+        <section class="row">
+            <p class="staywithus-text"><strong>Membership</strong></p>
+            <p class="staywithus-text">Since Casa Estrela works as a non-profit organization, it is mandatory to become a member to stay in the house. The membership fee is 12€ for a one-year period; note that the membership does not renew automatically. You’ll become a member by signing this form, and confirming that CASA ESTRELA is not liable for any damage done to you during your stay. </p>
+        </section>
+
+
+
+
+    </section>
+
+    <!-- Placeholder for Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Include the jQuery to load the footer dynamically -->
+    <script>
+        $(document).ready(function() {
+            // Load the footer content dynamically
+            $('#footer-placeholder').load('../html/footer.html', function() {
+                // The footer is loaded, re-initialize the clock
+                updateClock();
+                setInterval(updateClock, 1000);
+            });
+        });
+    </script>
+
+    <!-- Include clock.js -->
+    <script src="../clock.js"></script>
+</body>
+</html>
