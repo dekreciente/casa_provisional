@@ -41,8 +41,11 @@ u {
 
 
 /* Top Navigation Bar */
-.top-bar {
+
+.nav {
     display: flex;
+    list-style: none;
+    gap: 1rem;
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -58,14 +61,6 @@ u {
     font-family: "GaramondPremrPro-Capt"; 
 }
 
-
-/* TOP NAV  */
-.nav {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
-}
-
 .nav li a {
     font-size: 1rem;
     text-decoration: none;
@@ -75,6 +70,10 @@ u {
 
 .nav li a:hover {
     color: red;
+}
+
+.home-return {
+    margin-right: auto;
 }
 
 /* Footer */
