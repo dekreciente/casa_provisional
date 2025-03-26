@@ -61,11 +61,13 @@ u {
     font-family: "GaramondPremrPro-Capt"; 
 }
 
+
 .nav li a {
     font-size: 1rem;
     text-decoration: none;
     color: #3f3e3e;
     white-space: nowrap;
+    transition: color 0.3s ease; 
 }
 
 .nav li a:hover {
@@ -75,6 +77,42 @@ u {
 .home-return {
     margin-right: auto;
 }
+
+/* Language Button Styling */
+.language-switcher {
+    font-family: "GaramondPremrPro-Capt"; 
+    border: none; 
+    font-size: 1rem; 
+    background-color: transparent; 
+    color: black; 
+    cursor: pointer;
+    transition: color 0.3s ease; 
+}
+
+/* Hover Effect */
+.language-switcher:hover {
+    color: red; 
+}
+
+/* General Styles for Instagram and Email Links */
+.nav li a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #3f3e3e;
+    display: inline-block;
+}
+
+/* Mobile View: Make the text a little smaller */
+@media (max-width: 768px) {
+    .nav li a {
+        font-size: 0.90rem; /* Adjust font size to make it smaller on mobile */
+    }
+    .language-switcher {
+        font-size: 0.90rem; /* Adjust font size to make it smaller on mobile */ 
+    }
+}
+
+
 
 /* Footer */
 footer {
@@ -102,7 +140,7 @@ footer {
 
 .footer-text {
     text-align: center; 
-    flex-grow: 1; /* Allows the text to take up remaining space */
+    flex-grow: 1; /* El texto pilla el espacio que queda */
 }
 
 
@@ -110,34 +148,47 @@ footer {
 
 main {
     display: flex;
-    justify-content: center; 
-    align-items: flex-start; /* Align to the top of the screen */
-    min-height: 100vh; /* Ensures the content takes at least full viewport height */
-    padding: 2rem; 
-    box-sizing: border-box; /* Prevents padding from affecting size calculations */
-    overflow: auto; /* Enables scrolling if content overflows */
-    flex-direction: column; /* Stack content vertically */
-    height: auto; /* Allow for flexible height */
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    flex-direction: column; /* Stacking vertically */
+    height: auto;
 }
-
 
 
 /* Paragraph Styling */
 .home-text {
-    line-height: 1.6;
-    text-align: center; 
-    margin: 0 auto; /* Center the text */
-    max-width: 80%; 
-    padding: 0 2rem; /* Padding on sides for spacing */
-    word-wrap: break-word; /* Prevents long words from overflowing */
-    font-family: "GaramondPremrPro-Capt"; 
     font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 80%; /* Ensure text doesn't stretch too wide */
+    padding: 0 2rem;
+    word-wrap: break-word;
+}
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+    .home-text {
+        font-size: 1.5rem;  
+        max-width: 90%;      
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-text {
+        font-size: 1.125rem; /* Further reduce font size for very small screens */
+        max-width: 95%;      /* Max width adjusts */
+    }
 }
 
 /* Links General Styling */
 a {
     color: #3f3e3e;
     text-decoration: none;
+    transition: color 0.3s ease; 
 }
 
 a:hover {
@@ -190,33 +241,34 @@ a:hover {
 @media (max-width: 1224px) {
     main {
         padding: 1rem; /* Adjust padding for smaller screens */
+        
     }
 
     p {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        font-size: 1.125rem !important; /* Adjust font size for smaller screens */
         max-width: 90%; /* Use more width on smaller devices */
     }
 
     .home-text {
-        font-size: 1.5rem; /* Adjust font size for smaller screens */
-        max-width: 90%; /* Use more width on smaller devices */
+        font-size: 1.125rem; /* Adjust font size for smaller screens */
+        max-width: 90%; /* Use more width on smaller devices */    
     }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
+
     main {
-        padding: 1rem;
+        padding-top: 2rem; /* Optional, if you want space in main */
     }
-
-    p {
-        font-size: 1.25rem;
-        max-width: 95%; /* Allow more width for text */
-    }
-
+    
     .home-text {
-        font-size: 1.25rem;
-        max-width: 95%; /* Allow more width for text */
+        position: fixed;
+        top: 7.5rem; /* Adjust space from the top */
+        left: 50%;
+        transform: translateX(-50%); /* Center horizontally */
+        width: 100%;
+        max-width: 95%; /* Fit well on the screen */
     }
 }
 
@@ -227,7 +279,7 @@ a:hover {
     }
 
     p {
-        font-size: 1.125rem; /* Further reduce font size for very small screens */
+        font-size: 1.125rem !important; /* Further reduce font size for very small screens */
         max-width: 100%; /* Allow full width for text */
     }
 
@@ -239,26 +291,30 @@ a:hover {
 
 /* Table Styling For the People Page */
 table {
-    border-collapse: collapse; /* Ensures clean borders */
-    width: 50%; /* Default width, adjust as needed */
-    margin: 4rem auto; /* Center the table horizontally with margin */
-    font-size: 1rem; /* Default font size */
-    line-height: 1.5; /* Improve readability */
-    border-collapse: collapse; /* Ensures clean borders */
-    font-family: "GaramondPremrPro-Capt";  
+    border-collapse: collapse; 
+    width: 50%; 
+    margin: 4rem auto; 
+    font-size: 1rem; 
+    line-height: 1.5; 
+    border-collapse: collapse; 
+    font-family: "GaramondPremrPro-Capt";
 }
 
 td {
-    text-align: left; /* Align text to the left */
-    padding: 0.2rem 1rem; /* Vertical and horizontal padding */
-    white-space: nowrap; /* Prevent content from wrapping */
+    text-align: left; 
+    padding: 0.2rem 1rem;
+    white-space: nowrap; 
+    
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
     table {
         width: 70%; /* Allow more space for the table */
-        font-size: 1rem; /* Reduce font size */
+        font-size: 1rem !important; /* Reduce font size */
+        margin-bottom: 90px;
+        margin-left: 8px;
+        margin-top: 2px;
     }
 }
 
@@ -266,10 +322,13 @@ td {
     table {
         width: 90%; /* Table takes most of the screen */
         font-size: 0.875rem; /* Smaller font size */
+        margin-top: 40px;
+       
     }
 
     td {
         padding: 0.2rem 0.5rem; /* Reduce padding for tighter fit */
+        
     }
 }
 
@@ -305,14 +364,14 @@ td {
     overflow-y: auto;
 }
   
-  .staywithus-text {
+.staywithus-text {
     margin-bottom: 12px;
     margin-left: 2rem;
     font-size: 16px;
     line-height: 24px;
     margin-top: 0rem;
     font-family: "GaramondPremrPro-Capt";   
-  }
+}
 
   .staywithus-lists {
     margin-top: 20px;
@@ -362,6 +421,7 @@ td {
   }
 
 /* Located Page WIP I NEED TO ADD THE VIDEOS TO THE RIGHT*/
+/* I STILL NEED TO MAKE THE PAGE RESPONSIVE RIGHT NOW ITS NOT WORKING SUPER FINE*/
 .container {
     display: flex;           /* Flexbox to align items side by side */
     height: 100vh;           /* Full height of the viewport */
@@ -373,7 +433,7 @@ td {
     flex: 1;                 /* Takes available space */
     padding: 6rem;
     overflow-y: auto;        /* Enable vertical scrolling for this box */
-    height: 100vh;           /* Full height of the viewport */
+    height: 100vh;          /* Full height of the viewport */
 }
 
 /* Box2 - Right Column */
@@ -391,35 +451,85 @@ td {
     height: 100vh;           /* Same height as the boxes */
 }
 
-
+/* Las mismas propiedades para la pag de Casa Estrela */
 .located-text {
     margin-bottom: 12px;
-    margin-left: 2rem;
-    font-size: 1rem;
+    margin-left: 0; /* Remove or adjust the negative margin */
+    font-size: 1.2rem;
     line-height: 24px;
-    margin-top: 0rem; 
-    font-family: "GaramondPremrPro-Capt"; 
-      
+    margin-top: 0;
+    width: 100%;
 }
+
 
 .located-video {
-    width: 100%; /* Makes the video responsive */
-    height: auto; /* Keep aspect ratio */
-    border: 2px solid #ccc; /* Add a border */
-    border-radius: 8px; /* Round corners */
-    box-shadow: 0px 4px 10px yellow; /* Add shadow */
-    justify-content: center; /* Horizontally centers the video */
-    align-items: center; 
-
+    width: 100%; /* Make video responsive */
+    height: 100%;
+    object-fit: cover; 
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px yellowgreen;
 }
 
-
-
-@media (max-width: 400px) {
+/* Located Page + Casa Estrela Responsive */
+@media (max-width: 768px) {
+    /* Stack boxes vertically and adjust padding */
     .container {
-        flex-direction: column;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        height: auto; 
+    }
+
+    /* Adjust box padding and width */
+    .box1, .box2 {
+        padding: 2rem; /* Reduce padding for smaller screens */
+        width: 100%; /* Make boxes take full width */
+        gap: -10px;
+    }
+
+    .box1 {
+        margin-top: 50px;
+    }
+
+    /* Linea separacion horizontal */
+    .separator {
+        width: 100%;              
+        height: 1px;              
+        background-color: black;  
+        margin: 2rem 0;           
+    }
+    
+
+    /* Adjust text alignment and font size */
+    .located-text {
+        margin-left: 0; /* Remove left margin */ 
+        font-size: 0.9rem; 
+        text-align: left;
+    }
+
+    /* Ensure video scales properly */
+    .located-video {
+        width: 100%;
+        height: auto;
+        margin-bottom: 100px;
+    }
+
+     /* Imagen del about pero en un futuro puede ser video*/
+    .about-images {
+        width: 100%;
+        height: auto;
+        margin-bottom: 100px;
+    }
+
+    /* Adjust button styles */
+    .button {
+        width: 100%; /* Make buttons full width */
+        text-align: center;
+        padding: 1rem; /* Adjust padding */
     }
 }
+
 
 
 /* Projects Page A grid With Boxes for Each project */
@@ -459,13 +569,46 @@ td {
 
 
 
-  
-/* Responsive Adjustments */
+/* Hide the message by default */
+.mobile-warning {
+    display: none;  
+    position: fixed;  
+    top: 45%;  
+    left: 50%;  
+    transform: translate(-60%, -50%);  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+    text-align: left;
+    font-size: 40px;
+    line-height: 46px;
+    padding: 20px;
+    background-color: yellowgreen; 
+    border: 1px solid black;
+    border-radius: 12px;
+    margin: 20px;
+    z-index: 9999;  
+}
+/* Show the message on small screens */
 @media (max-width: 768px) {
+    .mobile-warning {
+        display: flex;  /* Mostrar mensaje phone */
+        position: fixed;
+    }
+
     .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller boxes for smaller screens */
+        display: none;  /* Esconde el grid para phone */
     }
 }
+
+/* Aparece el grid para pantallas normales */
+@media (min-width: 769px) {
+    .projects-grid {
+        display: grid; /* Show the project grid on larger screens */
+    }
+}
+
+
 
 
 /* About Page */

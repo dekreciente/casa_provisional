@@ -1,5 +1,3 @@
-// clock.js
-
 function updateClock() {
     const now = new Date();
     const time = now.toLocaleTimeString("pt-PT", { timeZone: "Europe/Lisbon" });

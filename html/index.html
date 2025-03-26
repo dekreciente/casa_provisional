@@ -10,47 +10,30 @@
 
     <!-- Include jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include the language switcher script EN / PT-->
+    <script src="../scripts/language.js"></script>
 </head>
 
 <body>
-
-<!-- Top bar with Casa Estrela and navigation links -->
- <header>
-            <nav>
-                <ul class="nav">
-                    <li class="home-return"><a href="../html/index.html">Casa Estrela</a>
-                    <li class="instagram"><a href="https://www.instagram.com/casaestrela__/" target="_blank">Instagram</a> 
-                    </li>
-                    <li><a href="mailto:acasaestrela@gmail.com" target="_blank">Email</a></li>
-                </ul>
-            </nav>
-     
-</header>
-
-    <!-- Horizontal line below top bar -->
-    <div class="horizontallinetop"></div>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
 
     <!-- Main content -->
-<main class="main-text">
-    <p class="home-text">
-        <a href="../html/about.html"><strong><u>Casa Estrela</u></strong></a>: is a non-profit organization and self-organized space for artists, theoreticians, 
-        researchers, practitioners, and activists. This is an ongoing process of building a place for 
-        creation, study, connection, and exchange for everyone who wants to expand their own practice. 
-        The <a href="../html/house.html"><strong><u>house</u></strong></a> is <a href="../html/located.html"><strong><u>located</u></strong></a> in the village of Molelos, in Beira Alta, Portugal, next to Serra do Caramulo. 
-        We have been developing <a href="../html/projects.html"><strong><u>projects</u></strong></a> and receiving <a href="../html/people.html"><strong><u>people</u></strong></a> since 2023. To <a href="../html/staywithus.html"><strong><u>stay with us</u></strong></a>, there is no need 
-        to apply, nor is there any selection. We practice solidarity prices, as accessible as possible.
-    </p>
-</main>
+    <main class="main-text">
+        <p class="home-text" id="home-text">
+            <!-- Content will be loaded dynamically -->
+        </p>
+    </main>
 
-
-    <!-- Footer -->
-    <!-- Placeholder for Footer -->
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-
-    <!-- Include the jQuery to load the footer dynamically -->
-        <script>
+    <!-- Include jQuery to load the footer and header dynamically -->
+    <script>
         $(document).ready(function() {
+            // Load the header content dynamically
+            $('#header-placeholder').load('../html/header.html');
+            
             // Load the footer content dynamically
             $('#footer-placeholder').load('../html/footer.html', function() {
                 // The footer is loaded, re-initialize the clock
@@ -58,11 +41,12 @@
                 setInterval(updateClock, 1000);
             });
         });
-        </script>
 
-        <!-- Include clock.js -->
-        <script src="../scripts/clock.js"></script>
-      
+        
+    </script>
+
+    <!-- Include clock.js -->
+    <script src="../scripts/clock.js"></script>
 
 </body>
 </html>
