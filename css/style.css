@@ -589,6 +589,11 @@ td {
     margin: 20px;
     z-index: 9999;  
 }
+
+.mobile-warning,
+.projects-grid {
+    display: none;
+}
 /* Show the message on small screens */
 @media (max-width: 768px) {
     .mobile-warning {
