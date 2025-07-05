@@ -32,10 +32,10 @@
     <script>
         $(document).ready(function() {
             // Load the header content dynamically
-            $('#header-placeholder').load('../html/header.html');
+            $('#header-placeholder').load('header.html');
             
             // Load the footer content dynamically
-            $('#footer-placeholder').load('../html/footer.html', function() {
+            $('#footer-placeholder').load('footer.html', function() {
                 // The footer is loaded, re-initialize the clock
                 updateClock();
                 setInterval(updateClock, 1000);
