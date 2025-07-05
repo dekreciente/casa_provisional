@@ -9,7 +9,7 @@ function loadLanguage(language) {
     const currentPage = window.location.pathname.split('/').pop().split('.')[0]; // Extract the page name from URL
 
     // Fetch the correct JSON file based on the selected language and page
-    fetch(`../locales/${currentPage}_${language}.json`)  // Example: index_en.json or index_pt.json
+    fetch(`/locales/${currentPage}_${language}.json`)  // <-- FIXED: use absolute path from domain root
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load the ${currentPage}_${language}.json file`);
