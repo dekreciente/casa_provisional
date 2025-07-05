@@ -22,9 +22,14 @@ html, body {
 }
 
 html {
-    background: #fffff2;
+    background: #fffff2; /*should we use vibran colors for the different pages but keep header and footer with that yellow?*/
     color: #3f3e3e;
-    font-family: "GaramondPremrPro-Capt"; 
+    font-family: "aktiv-grotesk", sans-serif !important; /*should I use garamond captions?*/
+     font-kerning: normal;
+     font-feature-settings: normal;
+  font-variation-settings: normal;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5 !important;
 }
 
 body {
@@ -58,7 +63,6 @@ u {
     z-index: 1000;
     background: #fffff2; 
     border-bottom: 1px solid black; /* Horizontal line at the top */
-    font-family: "GaramondPremrPro-Capt"; 
 }
 
 
@@ -80,7 +84,6 @@ u {
 
 /* Language Button Styling */
 .language-switcher {
-    font-family: "GaramondPremrPro-Capt"; 
     border: none; 
     font-size: 1rem; 
     background-color: transparent; 
@@ -126,7 +129,6 @@ footer {
     font-size: 16px;
     line-height: 1.6;
     background: #fffff2;
-    font-family: "GaramondPremrPro-Capt"; 
 }
 
 
@@ -297,7 +299,6 @@ table {
     font-size: 1rem; 
     line-height: 1.5; 
     border-collapse: collapse; 
-    font-family: "GaramondPremrPro-Capt";
 }
 
 td {
@@ -370,7 +371,6 @@ td {
     font-size: 16px;
     line-height: 24px;
     margin-top: 0rem;
-    font-family: "GaramondPremrPro-Capt";   
 }
 
   .staywithus-lists {
@@ -379,7 +379,6 @@ td {
     margin-left: 6rem;
     font-size: 16px;
     list-style-type: square;
-    font-family: "GaramondPremrPro-Capt"; 
   }
 
 
