@@ -5,11 +5,14 @@ function loadLanguage(language) {
   console.log(`Changing language to: ${language}`);
   currentLanguage = language;
 
-  // Determine the current page name from URL
+  // Determine current page name
   const currentPage = window.location.pathname.split('/').pop().split('.')[0] || 'index';
-  const jsonPath = `/locales/${currentPage}_${language}.json`;
 
-  fetch(jsonPath)
+  // Build full URL for JSON file
+  const jsonUrl = `${window.location.origin}/locales/${currentPage}_${language}.json`;
+  console.log(`Fetching: ${jsonUrl}`);
+
+  fetch(jsonUrl)
     .then(response => {
       if (!response.ok) {
         throw new Error(`Failed to load ${currentPage}_${language}.json (HTTP ${response.status})`);
@@ -20,43 +23,37 @@ function loadLanguage(language) {
       console.log("Loaded language data:", data);
 
       if (currentPage === 'index') {
-        const homeTextElem = document.getElementById('home-text');
-        if (homeTextElem) {
-          homeTextElem.innerHTML = data['home-text'] || "Content not available.";
-        }
+        updateElementInnerHTML('home-text', data['home-text']);
       } else if (currentPage === 'located') {
         updateLocatedPageContent(data['located']);
       }
-      // Add more page handlers here if needed
+      // Add more pages if needed
     })
     .catch(error => {
       console.error("Error loading language data:", error);
-      const homeTextElem = document.getElementById('home-text');
-      if (homeTextElem) {
-        homeTextElem.innerHTML = "Failed to load language content.";
-      }
+      updateElementInnerHTML('home-text', "Failed to load language content.");
     });
 }
 
-// Helper to update content for the 'located' page
-function updateLocatedPageContent(locatedData) {
-  if (!locatedData) {
-    console.warn("No data for 'located' page.");
-    return;
-  }
-
-  setInnerHTMLById('located-title', locatedData['located-title']);
-  setInnerHTMLById('located-intro', locatedData['located-intro']);
-  setInnerHTMLById('train-title', locatedData['train-title']);
-  setInnerHTMLById('train-info', locatedData['train-info']);
-}
-
-// Utility function to set innerHTML safely
-function setInnerHTMLById(id, content) {
-  const elem = document.getElementById(id);
-  if (elem) {
-    elem.innerHTML = content || '';
+// Helper to update DOM elements safely
+function updateElementInnerHTML(id, content) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.innerHTML = content || '';
   } else {
     console.warn(`Element with ID '${id}' not found.`);
   }
+}
+
+// Helper to update 'located' page content
+function updateLocatedPageContent(locatedData) {
+  if (!locatedData) {
+    console.warn("No 'located' data found in JSON.");
+    return;
+  }
+
+  updateElementInnerHTML('located-title', locatedData['located-title']);
+  updateElementInnerHTML('located-intro', locatedData['located-intro']);
+  updateElementInnerHTML('train-title', locatedData['train-title']);
+  updateElementInnerHTML('train-info', locatedData['train-info']);
 }
