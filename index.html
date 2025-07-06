@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Estrela | Home</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet" />
 </head>
 
@@ -22,19 +22,21 @@
   <!-- Include jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- Include clock and language -->
+  <!-- Include clock and language with root-relative paths -->
   <script src="/clock.js"></script>
   <script src="/language.js"></script>
 
   <script>
     $(document).ready(function() {
-      $('#header-placeholder').load('header.html');
-      $('#footer-placeholder').load('footer.html', function() {
-        // Start the clock AFTER footer is loaded (so IDs exist)
-        updateClock();
-        setInterval(updateClock, 1000);
-      });
+      // Load header and footer
+      $('#header-placeholder').load('/header.html');
+      $('#footer-placeholder').load('/footer.html');
 
+      // Start clock regardless of footer load
+      updateClock();
+      setInterval(updateClock, 1000);
+
+      // Load language
       loadLanguage(currentLanguage);
     });
   </script>
