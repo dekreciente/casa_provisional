@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa Estrela | Home</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet"> 
-
-    <!-- Include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include the language switcher script EN / PT-->
-    <script src="../scripts/language.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Estrela | Home</title>
+  
+  <!-- Corrected paths -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet"> 
 </head>
 
 <body>
-    <!-- Header Placeholder -->
-    <div id="header-placeholder"></div>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
 
-    <!-- Main content -->
-    <main class="main-text">
-        <p class="home-text" id="home-text">
-            
-        </p>
-    </main>
+  <!-- Main content -->
+  <main class="main-text">
+    <p class="home-text" id="home-text"></p>
+  </main>
 
-    <!-- Footer Placeholder -->
-    <div id="footer-placeholder"></div>
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
 
-    <!-- Include jQuery to load the footer and header dynamically -->
-    <script>
-        $(document).ready(function() {
-            // Load the header content dynamically
-            $('#header-placeholder').load('header.html');
-            
-            // Load the footer content dynamically
-            $('#footer-placeholder').load('footer.html', function() {
-                // The footer is loaded, re-initialize the clock
-                updateClock();
-                setInterval(updateClock, 1000);
-            });
-        });
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        
-    </script>
+  <!-- Load header and footer dynamically -->
+  <script>
+    $(document).ready(function() {
+      // Load header and footer
+      $('#header-placeholder').load('header.html');
+      $('#footer-placeholder').load('footer.html', function() {
+        // Footer loaded → start clock
+        updateClock();
+        setInterval(updateClock, 1000);
+      });
 
-    <!-- Include clock.js -->
-    <script src="../scripts/clock.js"></script>
+      // Load language content AFTER DOM + dynamic content starts loading
+      loadLanguage(currentLanguage);
+    });
+  </script>
 
+  <!-- Include clock.js -->
+  <script src="scripts/clock.js"></script>
+
+  <!-- Include language.js -->
+  <script src="scripts/language.js"></script>
 </body>
 </html>
