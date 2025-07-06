@@ -26,19 +26,16 @@
   <script src="/clock.js"></script>
   <script src="/language.js"></script>
 
-  <script>
-    $(document).ready(function() {
-      // Load header and footer
-      $('#header-placeholder').load('/header.html');
-      $('#footer-placeholder').load('/footer.html');
-
-      // Start clock regardless of footer load
+<script>
+  $(document).ready(function() {
+    $('#header-placeholder').load('/header.html');
+    $('#footer-placeholder').load('/footer.html', function() {
       updateClock();
       setInterval(updateClock, 1000);
-
-      // Load language
-      loadLanguage(currentLanguage);
     });
-  </script>
+
+    loadLanguage(currentLanguage);
+  });
+</script>
 </body>
 </html>
