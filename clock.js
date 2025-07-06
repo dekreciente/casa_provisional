@@ -11,19 +11,22 @@ function updateClock() {
   if (timeEl) timeEl.textContent = time;
   if (dayEl) dayEl.textContent = day;
 
-  updateActivity(now, time, day, activityEl);
+  updateActivity(now, day, activityEl);
 }
 
-function updateActivity(now, time, day, activityEl) {
+function updateActivity(now, day, activityEl) {
   let activity = "";
+  const hour = now.getHours();
   const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
-  if (time >= "09:00:00" && time < "10:00:00") {
+  if (hour === 9) {
     activity = "the cats are playing.";
     document.body.style.setProperty('--circle-color', "#00ff00");
-  } else if (time >= "10:00:00" && time < "22:00:00" && weekdays.includes(day)) {
+  } else if (hour >= 10 && hour < 22 && weekdays.includes(day)) {
     activity = "the cats are sleeping.";
     document.body.style.setProperty('--circle-color', "#0000ff");
+  } else {
+    document.body.style.setProperty('--circle-color', "#ff0000");
   }
 
   if (activityEl) activityEl.textContent = activity;
@@ -39,8 +42,3 @@ function applyTheme(now) {
     document.body.style.color = "inherit";
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  updateClock();
-  setInterval(updateClock, 1000);
-});

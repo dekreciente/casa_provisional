@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Casa Estrela | Home</title>
 
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
 
-  <!-- Clock and day -->
-  <div class="clock-container">
-    <span id="time"></span> | <span id="day"></span> | <span id="activity"></span>
-  </div>
-
-  <!-- Main content -->
   <main class="main-text">
     <p class="home-text" id="home-text"></p>
   </main>
 
-  <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
 
   <!-- Include jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- Include clock.js -->
+  <!-- Include clock and language -->
   <script src="clock.js"></script>
-
-  <!-- Include language.js -->
   <script src="language.js"></script>
 
-  <!-- Load header, footer, and language after scripts are loaded -->
   <script>
     $(document).ready(function() {
-      // Load header and footer dynamically
       $('#header-placeholder').load('header.html');
       $('#footer-placeholder').load('footer.html', function() {
+        // Start the clock AFTER footer is loaded (so IDs exist)
         updateClock();
         setInterval(updateClock, 1000);
       });
 
-      // Load language content
       loadLanguage(currentLanguage);
     });
   </script>
