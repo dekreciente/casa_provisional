@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Casa Estrela | Home</title>
 
-  <!-- Corrected paths -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://db.onlinewebfonts.com/c/4b19a85c501674eefea5b25f9ede2702?family=GaramondPremrPro-Capt" rel="stylesheet">
@@ -14,6 +13,11 @@
 <body>
   <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
+
+  <!-- Clock and day -->
+  <div class="clock-container">
+    <span id="time"></span> | <span id="day"></span> | <span id="activity"></span>
+  </div>
 
   <!-- Main content -->
   <main class="main-text">
@@ -27,10 +31,10 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- Include clock.js -->
-  <script src="scripts/clock.js"></script>
+  <script src="clock.js"></script>
 
   <!-- Include language.js -->
-  <script src="scripts/language.js"></script>
+  <script src="language.js"></script>
 
   <!-- Load header, footer, and language after scripts are loaded -->
   <script>
@@ -42,7 +46,7 @@
         setInterval(updateClock, 1000);
       });
 
-      // Load language content now that language.js is loaded
+      // Load language content
       loadLanguage(currentLanguage);
     });
   </script>

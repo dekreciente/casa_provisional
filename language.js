@@ -8,8 +8,8 @@ function loadLanguage(language) {
   // Determine current page name
   const currentPage = window.location.pathname.split('/').pop().split('.')[0] || 'index';
 
-  // Build full URL for JSON file
-  const jsonUrl = `${window.location.origin}/locales/${currentPage}_${language}.json`;
+  // Build URL for JSON file — no /locales/ directory
+  const jsonUrl = `${currentPage}_${language}.json`;
   console.log(`Fetching: ${jsonUrl}`);
 
   fetch(jsonUrl)
