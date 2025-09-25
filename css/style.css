@@ -15,6 +15,14 @@
     scrollbar-width: none; /* hide scrollbar */
 }
 
+@font-face {
+  font-family: 'CirrusCumulus';
+  src: url('/fonts/CirrusCumulus.woff2') format('woff2'),
+       url('/fonts/CirrusCumulus.woff') format('woff');
+  font-weight: 100 900;   /* adjust if not variable font */
+  font-style: normal;
+  font-display: swap;
+}
 
 
 html, body {
@@ -24,7 +32,7 @@ html, body {
 html {
     background: #fffff2; /*should we use vibran colors for the different pages but keep header and footer with that yellow?*/
     color: #3f3e3e;
-    font-family: "aktiv-grotesk", sans-serif !important; /*should I use garamond captions?*/
+    font-family: 'CirrusCumulus', sans-serif !important;
      font-kerning: normal;
      font-feature-settings: normal;
   font-variation-settings: normal;
@@ -90,6 +98,7 @@ u {
     color: black; 
     cursor: pointer;
     transition: color 0.3s ease; 
+    font-family: 'CirrusCumulus', sans-serif;
 }
 
 /* Hover Effect */
